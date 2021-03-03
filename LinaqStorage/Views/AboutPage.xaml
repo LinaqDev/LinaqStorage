@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LinaqStorage"
+             Title="{Binding Source={x:Static local:Constants.ApplicationNameWithVersion}, Mode=OneWay}"
+             x:Class="LinaqStorage.Views.AboutPage">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="Medium"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Label Text="{Binding Source={x:Static local:Constants.ApplicationName}, Mode=OneWay}" VerticalOptions="Center"  HorizontalOptions="Center" FontSize="Large" Font="Bold,25"/>
+            <Label Text="{Binding Source={x:Static local:Constants.AssemblyVersion}, Mode=OneWay}" VerticalOptions="Center"  HorizontalOptions="Center"/>
+
+            <!--separator-->
+            <BoxView   VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="1" WidthRequest="150" Color="#FF0000"></BoxView>
+
+            <Label Text="Aplikacja stworzona w ramach pracy inzynierskiej." VerticalOptions="Center"  HorizontalOptions="Center"/>
+            <Label Text="Karkonoska Państwowa Szkoła Wyższa" VerticalOptions="Center"  HorizontalOptions="Center" Font="Bold,19"/>
+            <Label Text="Wydzial: Przyrodniczo-Techniczny" VerticalOptions="Center"  HorizontalOptions="Center"/>
+            <Label Text="Temat: Projekt i implementacja aplikacji mobilnej zabezpieczającej dane metodami kryptograficznymi." VerticalOptions="Center" />
+            <Label Text="Autor: Dominik Owsianka" VerticalOptions="Center"  HorizontalOptions="Center"/>
+            <Label Text="dominik.owsianka@gmail.com" VerticalOptions="Center"  HorizontalOptions="Center"/>
+            <Label Text="Promotor: Jerzy Januszewicz" VerticalOptions="Center"  HorizontalOptions="Center"/>
+            <Label Text="{Binding Source={x:Static local:Constants.CopyRightString}, Mode=OneWay}" VerticalOptions="Center" HorizontalOptions="Center" Font="Bold,17"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

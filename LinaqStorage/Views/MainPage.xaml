@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LinaqStorage"
+             xmlns:i18n="clr-namespace:LinaqStorage.Helpers"
+             xmlns:Behavior="clr-namespace:LinaqStorage.Helpers"
+             Title="{Binding Source={x:Static local:Constants.ApplicationNameWithVersion}, Mode=OneWay}"
+             x:Class="LinaqStorage.MainPage"
+             x:Name="MP">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuSettings" Order="Secondary" Icon="Microsoft.png" Text="{i18n:Translate NavigationBar_Settings}" Priority="0" Command="{Binding SettingsPageCmd}"/>
+        <ToolbarItem Name="MenuContact" Order="Secondary" Icon="Xamarin.png" Text="{i18n:Translate NavigationBar_Contact}" Priority="1" Command="{Binding AboutPageCmd}" />
+        <ToolbarItem Name="MenuContact" Order="Secondary" Icon="Xamarin.png" Text="Help" Priority="2" Command="{Binding HelpPageCmd}" />
+        <ToolbarItem Name="MenuContact" Order="Secondary" Icon="Xamarin.png" Text="{i18n:Translate Exit}" Priority="3" Command="{Binding ExitAppCmd}" />
+    </ContentPage.ToolbarItems>
+    <StackLayout  >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Horizontal" Margin="7,10,0,0" >
+                <Button Text="{i18n:Translate Add}" Command="{Binding AddNewFileCmd}" HorizontalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Grid.Column="1">
+                <Label Text="Sort by:" HorizontalOptions="Start" VerticalOptions="Start"/>
+                <Picker 
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"
+                    WidthRequest="240"
+                    ItemsSource="{Binding SortListProperties}"
+                    SelectedItem="{Binding SelectedSortProperty}"
+                    ItemDisplayBinding="{Binding DisplayText}"/>
+            </StackLayout>
+
+            <ListView Grid.Row="1" Grid.ColumnSpan="2"  ItemsSource="{Binding FilesList}" SelectedItem="{Binding SelectedFileObject}" SelectionMode="Single" Margin="10" VerticalOptions="FillAndExpand" HasUnevenRows="True"  >
+                <ListView.Behaviors>
+                    <Behavior:EventToCommandBehavior EventName="ItemTapped" Command="{Binding OpenFileCmd}" />
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="{i18n:Translate Delete}" Command="{Binding Path=BindingContext.DeleteFileObjectCmd, Source={x:Reference Name=MP}}" CommandParameter="{Binding .}"/>
+                                <!--<MenuItem Text="{i18n:Translate Open}" />-->
+                                <MenuItem Text="{i18n:Translate Save_as}" Command="{Binding Path=BindingContext.SaveAsCmd, Source={x:Reference Name=MP}}" CommandParameter="{Binding .}"/>
+                                <MenuItem Text="{i18n:Translate Details}"  Command="{Binding Path=BindingContext.DetailsPageCmd, Source={x:Reference Name=MP}}" CommandParameter="{Binding .}"/>
+                            </ViewCell.ContextActions>
+                            <StackLayout  Orientation="Horizontal">
+                                <Image Source="{Binding IconPath}" WidthRequest="48" Margin="0,2" />
+                                <StackLayout Orientation="Vertical">
+
+                                    <Label Text="{Binding FileName}" Font="Bold,18" />
+                                    <StackLayout Margin="5,0,0,0">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Label Grid.Column="0" Text="{Binding FileEncryptionDate}"/>
+                                            <Label Grid.Column="1" Text="{Binding FileEncryptionMethod}"/>
+                                            <Label Grid.Column="2" Text="{Binding FileExtension}"/>
+                                            <!--<Label Grid.ColumnSpan="3" Grid.Row="1" Text="{Binding FilePath}"/>-->
+                                        </Grid>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </StackLayout>
+</ContentPage>

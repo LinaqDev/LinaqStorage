@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinaqStorage", "D:\LinaqStorage\LinaqStorage\LinaqStorage\LinaqStorage.csproj", "{CF5BE097-FF31-4547-9169-3E371DEC3362}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinaqStorage", "LinaqStorage\LinaqStorage.csproj", "{419D12EA-5952-46CD-A966-522B37550B18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinaqStorage.Android", "D:\LinaqStorage\LinaqStorage\LinaqStorage.Android\LinaqStorage.Android.csproj", "{681E90B3-C3ED-40F8-B535-5E0E12A9C3D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinaqStorage.Android", "LinaqStorage.Android\LinaqStorage.Android.csproj", "{681E90B3-C3ED-40F8-B535-5E0E12A9C3D0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTestLinaqStorage", "D:\LinaqStorage\XUnitTestLinaqStorage\XUnitTestLinaqStorage.csproj", "{436F2D95-9641-46D2-9AAB-319750E772EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTestLinaqStorage", "XUnitTestLinaqStorage\XUnitTestLinaqStorage.csproj", "{352A71BE-A56A-41A3-8598-79CC03A5E79F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,20 +15,20 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CF5BE097-FF31-4547-9169-3E371DEC3362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CF5BE097-FF31-4547-9169-3E371DEC3362}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CF5BE097-FF31-4547-9169-3E371DEC3362}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CF5BE097-FF31-4547-9169-3E371DEC3362}.Release|Any CPU.Build.0 = Release|Any CPU
+		{419D12EA-5952-46CD-A966-522B37550B18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{419D12EA-5952-46CD-A966-522B37550B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{419D12EA-5952-46CD-A966-522B37550B18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{419D12EA-5952-46CD-A966-522B37550B18}.Release|Any CPU.Build.0 = Release|Any CPU
 		{681E90B3-C3ED-40F8-B535-5E0E12A9C3D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{681E90B3-C3ED-40F8-B535-5E0E12A9C3D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{681E90B3-C3ED-40F8-B535-5E0E12A9C3D0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{681E90B3-C3ED-40F8-B535-5E0E12A9C3D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{681E90B3-C3ED-40F8-B535-5E0E12A9C3D0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{681E90B3-C3ED-40F8-B535-5E0E12A9C3D0}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{436F2D95-9641-46D2-9AAB-319750E772EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{436F2D95-9641-46D2-9AAB-319750E772EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{436F2D95-9641-46D2-9AAB-319750E772EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{436F2D95-9641-46D2-9AAB-319750E772EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{352A71BE-A56A-41A3-8598-79CC03A5E79F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{352A71BE-A56A-41A3-8598-79CC03A5E79F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{352A71BE-A56A-41A3-8598-79CC03A5E79F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{352A71BE-A56A-41A3-8598-79CC03A5E79F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

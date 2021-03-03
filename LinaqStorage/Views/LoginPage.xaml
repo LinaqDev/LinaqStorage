@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LinaqStorage.Views.LoginPage"
+             xmlns:i18n="clr-namespace:LinaqStorage.Helpers" 
+             xmlns:local="clr-namespace:LinaqStorage"
+             Title="{Binding Source={x:Static local:Constants.ApplicationNameWithVersion}, 
+                    Mode=OneWay}"
+             xmlns:Behavior="clr-namespace:LinaqStorage.Helpers">
+    <ContentPage.ToolbarItems> 
+        <ToolbarItem Name="MenuContact" Order="Secondary" Icon="Xamarin.png" 
+                     Text="{i18n:Translate NavigationBar_Contact}" 
+                     Priority="1" 
+                     Command="{Binding AboutPageCmd}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Margin="10">
+            <Label Text="{i18n:Translate SettingsPage_Password}" HorizontalOptions="Center"/>
+            <Entry x:Name="passwordEntry" IsPassword="true" Text="{Binding PasswordEntry}" >
+                <Entry.Behaviors>
+                    <Behavior:EventToCommandBehavior EventName="Completed" 
+                                                     Command="{Binding LoginCmd}" />
+                </Entry.Behaviors>
+            </Entry>
+            <Button Text="{i18n:Translate LoginPage_Login}" Command="{Binding LoginCmd}"  />
+            <Button Text="{i18n:Translate PasswordPage_ChangePassword}" 
+                    BackgroundColor="Transparent" 
+                    TextColor="Blue" 
+                    FontSize="Small" 
+                    HorizontalOptions="End" 
+                    Command="{Binding OpenChangePasswordPageCmd}"/>
+            <Button Text="{i18n:Translate PasswordPage_ResetPassword}" 
+                    BackgroundColor="Transparent" 
+                    TextColor="OrangeRed" 
+                    FontSize="Small" 
+                    HorizontalOptions="End" 
+                    Command="{Binding ResetPasswordCmd}"/>
+            <!--<Label x:Name="messageLabel" />-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

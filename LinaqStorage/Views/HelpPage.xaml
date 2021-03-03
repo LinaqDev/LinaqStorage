@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LinaqStorage.Views.HelpPage">
+    <ContentPage.Content>
+        <ScrollView>
+
+
+            <StackLayout>
+                <Label Text="Linaq Storage"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" Margin="3"/>
+                <Label Text="Linaq Storage pozawala na bezpieczne przechowywanie ważnych plików na twoim urządzeniu mobilnym."
+                VerticalOptions="Start" 
+                HorizontalOptions="Start" Margin="3"/>
+                <Label Text="1) Aby zaszyfrowac plik należy wcisnac przycisk 'Dodaj' na stronie głównej, a następnie wybrać plik"
+                VerticalOptions="Start" 
+                HorizontalOptions="Start" />
+                <Image Source="dodaj.png" Margin="0,2" />
+                <Image Source="wyborpliku.png" Margin="0,2" />
+
+                <Label Text="2) Metodę szyfrowania można zmienic w ustawieniach aplikacji."
+                VerticalOptions="Start" 
+                HorizontalOptions="Start" />
+                <Image Source="menu3dots.png" Margin="0,2" />
+                <Image Source="menu.png" Margin="0,2" />
+                <Label Text="3) Menu kontekstowe dla pliku wyświetlane jest po dluższym przytrzymaniu na pojedynczym obiekcie na liscie głównej."
+                VerticalOptions="Start" 
+                HorizontalOptions="Start" />
+                <Image Source="cmenu.png" Margin="0,2" />
+                <Image Source="cmenu2.png" Margin="0,2" />
+                <Label Text="4) Po wybraniu opcji 'Zapisz', odszyfrowany plik jest zapisywany do folderu Download/Pobrane na urządzeniu lub karcie pamięci."
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" Margin="3"/>
+                <Label Text="5) Zmiana hasłą możliwa jest z poziomu ustawień lub strony logowania."
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" Margin="3"/>
+                <Label Text="6) Resetowanie hasła mozliwe jest tylko na stronie logowania, przy czym po zresetowaniu hasłą zostaną utracone wszystkie wczesniej zapisane dane."
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" Margin="3"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

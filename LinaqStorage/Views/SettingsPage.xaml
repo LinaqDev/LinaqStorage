@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LinaqStorage.Views.SettingsPage" 
+             xmlns:local="clr-namespace:LinaqStorage"
+             
+             xmlns:i18n="clr-namespace:LinaqStorage.Helpers"
+             Title="{i18n:Translate NavigationBar_Settings}">
+
+    <ContentPage.Content>
+        <StackLayout Margin="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" Margin="5">
+                    <Label Text="{i18n:Translate SettingsPage_Language}" Margin="3"/>
+                    <Picker 
+                    ItemsSource="{Binding LanguageList}"
+                    SelectedItem="{Binding SelectedLanguage}" 
+                />
+                </StackLayout>
+
+
+                <StackLayout Grid.Row="1" Margin="5">
+                    <Label Text="{i18n:Translate SettingsPage_EncryptionMethod}" Margin="3"/>
+                    <Picker 
+                    ItemsSource="{Binding EncryptionMemthods}"
+                    SelectedItem="{Binding SelectedEncryptionMethod}"
+                />
+                </StackLayout>
+                <StackLayout Margin="5" Grid.Row="3" Orientation="Horizontal">
+                    <Switch IsToggled="{Binding EncryptKeyWithRSA, Mode=TwoWay}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Text="{i18n:Translate SettingsPage_UseRSA}" Margin="3" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Margin="5" Grid.Row="4" Orientation="Horizontal">
+                    <Switch IsToggled="{Binding DeleteOriginalFile, Mode=TwoWay}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Text="{i18n:Translate SettingsPage_DeleteOriginalFile}" Margin="3" VerticalOptions="Center"/>
+                </StackLayout>
+
+                <StackLayout Margin="5" Grid.Row="5" Orientation="Vertical">
+
+                    <Label Text="{i18n:Translate SettingsPage_Password}" Margin="3"/>
+                    <Button Text="{i18n:Translate SettingsPage_ChangePassword}" HorizontalOptions="Center" WidthRequest="250" Command="{Binding OpenChangePasswordPageCmd}"/>
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
